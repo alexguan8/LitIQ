@@ -1,0 +1,152 @@
+
+<!-- saved from url=(0054)http://fhs.d211.org/students/skhan/TimerApp/clock.html -->
+<html class="gr__fhs_d211_org"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title> Timing Essentials </title>
+
+<link href="./Timing Essentials_files/css" rel="stylesheet">
+<link rel="stylesheet" href="./Timing Essentials_files/style.css">
+
+<link href="./Timing Essentials_files/icon" rel="stylesheet">
+
+<link type="text/css" rel="stylesheet" href="./Timing Essentials_files/materialize.min.css" media="screen,projection">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+      function startTime() {
+        changeColors();
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('txt').innerHTML =
+        h + ":" + m + ":" + s;
+
+
+        var monthNames = ["January", "February", "March", "April", "May", "June",  "July", "August", "September", "October", "November", "December"];
+        var d = new Date();
+        document.getElementById("dateDiv").innerHTML= monthNames[d.getMonth()] + " " + d.getDate();
+
+        var t = setTimeout(startTime, 1000);
+    }
+    function checkTime(i) {
+        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        return i;
+    }
+
+
+
+
+
+
+      var colors = [ "#009688" , "#673AB7" ,"#9C27B0"];
+			//basically a smoother transition list of colors I selected from a color pallate chart
+			var color = -1;
+
+			function changeColors()
+			{
+
+        setTimeout(500);
+				color++;
+				if(color>colors.length-1)
+				{
+					color=0;
+
+				}
+
+				document.body.style.backgroundColor = colors[color];
+
+				//setTimeout(changeColors, 1000);
+			}
+
+
+
+      function load()
+      {
+        startTime();
+        //changeColors();
+      }
+
+
+  </script>
+<style>
+      .centeredStyle{
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      /* bring your own prefixes */
+      transform: translate(-50%, -50%);
+    }
+
+    .centeredStyle2{
+    position: fixed;
+    top: 70%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+  }
+
+    .clock
+    {
+      font-size: 1000%;
+    }
+
+    body{
+    				transition: background-color .5s ease
+    			}
+
+
+  </style>
+</head>
+<body class="" onload="load()" data-gr-c-s-loaded="true" style="background-color: rgb(103, 58, 183);">
+
+<script type="text/javascript" src="./Timing Essentials_files/jquery-3.2.1.min.js.download"></script>
+<script type="text/javascript" src="./Timing Essentials_files/materialize.min.js.download"></script>
+<script>
+		(function ($) {
+    $(function () {
+
+        //initialize all modals
+        $('.modal').modal();
+
+        //now you can open modal from code
+        //$('#modal1').modal('open');
+
+        //or by click on trigger
+        $('.trigger-modal').modal();
+
+    }); // end of document ready
+})(jQuery); // end of jQuery name space
+
+$( document ).ready(function(){
+
+ $(".button-collapse").sideNav();
+
+
+})
+
+		</script>
+<nav class="nav-extended">
+<div class="nav-wrapper">
+<a href="http://fhs.d211.org/students/skhan/TimerApp/clock.html#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+<ul id="nav-mobile" class="left hide-on-med-and-down">
+<li class="teal darken-1"><a href="http://fhs.d211.org/students/skhan/TimerApp/clock.html">Clock</a></li>
+<li class=""><a href="http://fhs.d211.org/students/skhan/TimerApp/test3.html">Countdown</a></li>
+<li class=""><a href="http://fhs.d211.org/students/skhan/TimerApp/stop.html">Stopwatch</a></li>
+</ul>
+<ul class="side-nav" id="mobile-demo" style="transform: translateX(-100%);">
+<li class="teal darken-1"><a href="http://fhs.d211.org/students/skhan/TimerApp/clock.html">Clock</a></li>
+<li class=""><a href="http://fhs.d211.org/students/skhan/TimerApp/test3.html">Countdown</a></li>
+<li class=""><a href="http://fhs.d211.org/students/skhan/TimerApp/stop.html">Stopwatch</a></li>
+</ul>
+</div>
+</nav>
+<center>
+<div class="centeredStyle">
+<div id="txt" class="clock" style="color:white;">17:20:51</div>
+<div id="dateDiv" class="" style="color:white; font-size:300%;">April 1</div>
+</div>
+</center>
+
+
+<div class="hiddendiv common"></div><div class="drag-target" data-sidenav="mobile-demo" style="left: 0px; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div></body></html>
